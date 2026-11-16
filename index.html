@@ -207,15 +207,36 @@
                 </svg>
                 <div>
                   <h3>macOS / Linux</h3>
-                  <p>源码构建</p>
+                  <p>dmg · AppImage</p>
                 </div>
               </div>
-              <p class="download-desc">
-                仓库已包含 dmg 与 AppImage 打包配置，可自行安装依赖后构建。需要 Node.js 22.12 及以上版本。
-              </p>
-              <a class="btn ghost block" href="https://github.com/YOCIM888/YOCIM-AGENT#install--develop" target="_blank" rel="noopener"
-                >查看构建说明 ↗</a
-              >
+              <p class="download-desc">未签名构建。macOS 首次打开请在 Finder 中右键选择「打开」。</p>
+              <div class="asset-links">
+                <a
+                  class="btn ghost block"
+                  data-asset="mac-arm64"
+                  href="https://github.com/YOCIM888/YOCIM-AGENT/releases"
+                  target="_blank"
+                  rel="noopener"
+                  >macOS · Apple Silicon (dmg)</a
+                >
+                <a
+                  class="btn ghost block"
+                  data-asset="mac-x64"
+                  href="https://github.com/YOCIM888/YOCIM-AGENT/releases"
+                  target="_blank"
+                  rel="noopener"
+                  >macOS · Intel (dmg)</a
+                >
+                <a
+                  class="btn ghost block"
+                  data-asset="linux-x64"
+                  href="https://github.com/YOCIM888/YOCIM-AGENT/releases"
+                  target="_blank"
+                  rel="noopener"
+                  >Linux · x64 (AppImage)</a
+                >
+              </div>
             </div>
           </div>
         </div>
@@ -227,7 +248,7 @@
           <div class="notes">
             <div class="note">
               <h3>未签名安装包</h3>
-              <p>安装包暂未购买代码签名证书。Windows SmartScreen 可能提示「未知发布者」，点击「更多信息 → 仍要运行」即可继续。</p>
+              <p>安装包暂未购买代码签名证书。Windows SmartScreen 可能提示「未知发布者」，点击「更多信息 → 仍要运行」即可继续；macOS 包未公证，首次打开请在 Finder 中右键选择「打开」。</p>
             </div>
             <div class="note">
               <h3>数据留在本地</h3>

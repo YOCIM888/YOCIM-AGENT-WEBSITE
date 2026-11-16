@@ -3,7 +3,7 @@
 (() => {
   const REPO = 'YOCIM888/YOCIM-AGENT';
   const API = `https://api.github.com/repos/${REPO}/releases/latest`;
-  const CACHE_KEY = 'yocim-agent-latest-release';
+  const CACHE_KEY = 'yocim-agent-latest-release-v2';
   const CACHE_TTL = 6 * 60 * 60 * 1000;
 
   const formatSize = (bytes) => `${Math.round(bytes / 1024 / 1024)} MB`;
@@ -22,6 +22,13 @@
     if (value.size > 0) {
       document.querySelectorAll('[data-size]').forEach((el) => {
         el.textContent = `约 ${formatSize(value.size)}`;
+      });
+    }
+    if (value.links) {
+      Object.entries(value.links).forEach(([key, url]) => {
+        document.querySelectorAll(`[data-asset="${key}"]`).forEach((el) => {
+          el.href = url;
+        });
       });
     }
   };
@@ -52,14 +59,20 @@
     .then((res) => (res.ok ? res.json() : Promise.reject(new Error(String(res.status)))))
     .then((release) => {
       const assets = Array.isArray(release.assets) ? release.assets : [];
-      const installer =
-        assets.find((asset) => /-setup\.exe$/i.test(asset.name)) ||
-        assets.find((asset) => /\.exe$/i.test(asset.name));
+      const pick = (pattern) => assets.find((asset) => pattern.test(asset.name));
+
+      const installer = pick(/-setup\.exe$/i);
+      const links = {
+        'mac-arm64': pick(/(^|[^a-z0-9])arm64\.dmg$/i)?.browser_download_url,
+        'mac-x64': pick(/(^|[^a-z0-9])x64\.dmg$/i)?.browser_download_url,
+        'linux-x64': pick(/\.appimage$/i)?.browser_download_url,
+      };
 
       const value = {
         tag: release.tag_name || '',
         url: installer ? installer.browser_download_url : release.html_url,
         size: installer ? installer.size : 0,
+        links: Object.fromEntries(Object.entries(links).filter(([, url]) => Boolean(url))),
       };
       apply(value);
       writeCache(value);
