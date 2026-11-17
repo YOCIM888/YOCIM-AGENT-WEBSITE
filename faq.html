@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>常见问题 — YOCIM AGENT</title>
+    <meta
+      name="description"
+      content="YOCIM AGENT 常见问题：SmartScreen 提示、API Key 安全、离线可用性、与 Cursor 的关系、数据存储与更新。"
+    />
+    <link rel="canonical" href="https://agent.yocim.top/faq.html" />
+    <link rel="alternate" hreflang="zh-CN" href="https://agent.yocim.top/faq.html" />
+    <link rel="alternate" hreflang="en" href="https://agent.yocim.top/en/faq.html" />
+    <link rel="alternate" hreflang="x-default" href="https://agent.yocim.top/faq.html" />
+    <meta property="og:site_name" content="YOCIM AGENT" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="常见问题 — YOCIM AGENT" />
+    <meta property="og:url" content="https://agent.yocim.top/faq.html" />
+    <meta property="og:description" content="SmartScreen、API Key 安全、离线可用性、与 Cursor 的关系等常见问题。" />
+    <meta property="og:image" content="https://agent.yocim.top/assets/icon-256.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="assets/icon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "name": "YOCIM AGENT 常见问题",
+        "url": "https://agent.yocim.top/faq.html",
+        "dateModified": "2026-11-18",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Windows SmartScreen 提示未知发布者，安全吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "当前安装包未购买代码签名证书，因此 SmartScreen 会显示未知发布者。请只从本项目 GitHub Releases 或本官网下载，核对文件名与 SHA-256 后选择更多信息 → 仍要运行。macOS 构建未公证，首次打开请在 Finder 中右键选择打开。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "API Key 会上传到哪里？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "API Key 经 Electron safeStorage 加密后保存在本机，界面只能读取是否已配置。请求只发送到你选择的模型服务或你自行配置的端点；YOCIM 不运营中转服务，也不会收集你的密钥。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "可以离线使用吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "应用本体和本地数据可离线使用；配置本地 Ollama 等本地模型后，对话也能完全离线。云端模型、联网搜索、更新检查需要网络。首次安装和更新必须从 GitHub Releases 下载安装包。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "YOCIM AGENT 和 Cursor 是什么关系？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "两者没有隶属关系。YOCIM AGENT 是独立的开源桌面应用，不是 Cursor 的分支或插件，也不依赖 Cursor 的专有服务。你可以同时使用它们，项目会话和设置互不共享。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "数据保存在哪里，如何删除？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "项目、会话、消息、设置和审计日志保存在 Electron userData 目录，Windows 通常为 %APPDATA%\\YOCIM AGENT。可在设置 → 存储 更改目录，重启生效。删除整个目录即可清除本地数据；卸载应用不会自动删除它。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "如何更新或卸载？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "应用启动后会检查新版本；也可从官网更新日志或 GitHub Releases 下载最新安装包覆盖安装，升级会保留本地会话、设置与 API Key。Windows 可在设置中卸载，macOS 将应用拖到废纸篓，Scoop 用户可运行 scoop update yocim-agent。"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到正文</a>
+
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="/">
+          <img class="brand-mark" src="assets/icon-256.png" alt="YOCIM AGENT" width="28" height="28" />
+          <span class="brand-name">YOCIM <strong>AGENT</strong></span>
+        </a>
+        <nav class="nav" aria-label="主导航">
+          <a href="/#features">功能</a>
+          <a href="/#download">下载</a>
+          <a href="changelog.html">更新日志</a>
+          <a href="faq.html">常见问题</a>
+          <a class="nav-ext" href="https://github.com/YOCIM888/YOCIM-AGENT" target="_blank" rel="noopener"
+            >GitHub ↗</a
+          >
+          <a class="nav-lang" href="/en/faq.html" lang="en" hreflang="en">EN</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="page-head">
+        <div class="wrap">
+          <h1>常见问题</h1>
+          <p>关于安装提示、密钥安全、离线使用与产品定位的几个高频问题。没有找到答案？欢迎通过页脚邮箱或 GitHub Issues 提问。</p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary>Windows SmartScreen 提示「未知发布者」，安全吗？</summary>
+            <div class="faq-body">
+              <p>
+                当前安装包未购买代码签名证书，因此 SmartScreen 会显示「未知发布者」。请只从本项目
+                <a href="https://github.com/YOCIM888/YOCIM-AGENT/releases/latest" target="_blank" rel="noopener"
+                  >GitHub Releases ↗</a
+                >
+                或本官网下载，核对文件名与 SHA-256 后选择「更多信息 → 仍要运行」。macOS 构建未公证，首次打开请在 Finder 中右键选择「打开」。
+              </p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>API Key 会上传到哪里？</summary>
+            <div class="faq-body">
+              <p>
+                API Key 经 Electron <code>safeStorage</code> 加密后保存在本机，界面只能读取「是否已配置」。请求只发送到你选择的模型服务或你自行配置的端点；YOCIM 不运营中转服务，也不会收集你的密钥。详见
+                <a href="privacy.html">隐私政策</a>。
+              </p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>可以离线使用吗？</summary>
+            <div class="faq-body">
+              <p>
+                应用本体和本地数据可离线使用；配置本地 Ollama 等模型后，对话也能完全离线。云端模型、联网搜索、更新检查需要网络。首次安装和后续更新必须从 GitHub Releases 下载安装包。
+              </p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>YOCIM AGENT 和 Cursor 是什么关系？</summary>
+            <div class="faq-body">
+              <p>
+                两者没有隶属关系。YOCIM AGENT 是独立的开源桌面应用，不是 Cursor 的分支或插件，也不依赖 Cursor 的专有服务。你可以同时使用它们，项目会话和设置互不共享。首页有
+                <a href="/#compare">功能对比</a>。
+              </p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>数据保存在哪里，如何删除？</summary>
+            <div class="faq-body">
+              <p>
+                项目、会话、消息、设置和审计日志保存在 Electron <code>userData</code> 目录，Windows 通常为
+                <code>%APPDATA%\YOCIM AGENT</code>。可在「设置 → 存储」更改目录，重启生效。删除整个目录即可清除本地数据；卸载应用不会自动删除它。
+              </p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>如何更新或卸载？</summary>
+            <div class="faq-body">
+              <p>
+                应用启动后会检查新版本；也可从官网<a href="changelog.html">更新日志</a>或 GitHub Releases 下载最新安装包覆盖安装，升级会保留本地会话、设置与 API Key。Windows 可在系统设置中卸载，macOS 将应用拖到废纸篓，Scoop 用户可运行
+                <code>scoop update yocim-agent</code>。
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <p>© 2026 YOCIM · YOCIM AGENT · <a href="privacy.html">隐私政策</a></p>
+        <nav aria-label="页脚导航">
+          <a href="install.html">安装方式</a>
+          <a href="changelog.html">更新日志</a>
+          <a href="faq.html">常见问题</a>
+          <a href="https://github.com/YOCIM888/YOCIM-AGENT/issues" target="_blank" rel="noopener">GitHub Issues</a>
+          <a href="mailto:yocim666@outlook.com">yocim666@outlook.com</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="assets/main.js" defer></script>
+  </body>
+</html>

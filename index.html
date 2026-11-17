@@ -6,10 +6,16 @@
     <title>YOCIM AGENT — 本地优先的桌面 AI 编程助手</title>
     <meta
       name="description"
-      content="YOCIM AGENT（预览版）是一个本地优先的桌面 AI 编程助手：多模型接入、工具调用与审批、三栏工作区、内置编辑器，数据保存在本地。支持 Windows、macOS 与 Linux 下载。"
+      content="YOCIM AGENT 是一个本地优先的桌面 AI 编程助手：多模型接入、工具调用与审批、三栏工作区、内置编辑器，数据保存在本地。支持 Windows、macOS 与 Linux 下载。"
     />
+    <link rel="canonical" href="https://agent.yocim.top/" />
+    <link rel="alternate" hreflang="zh-CN" href="https://agent.yocim.top/" />
+    <link rel="alternate" hreflang="en" href="https://agent.yocim.top/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://agent.yocim.top/" />
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#0b0d0e" media="(prefers-color-scheme: dark)" />
+    <meta property="og:site_name" content="YOCIM AGENT" />
+    <meta property="og:locale" content="zh_CN" />
     <meta property="og:title" content="YOCIM AGENT — 本地优先的桌面 AI 编程助手" />
     <meta
       property="og:description"
@@ -17,10 +23,30 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://agent.yocim.top/" />
+    <meta property="og:image" content="https://agent.yocim.top/assets/icon-256.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="YOCIM AGENT — 本地优先的桌面 AI 编程助手" />
+    <meta name="twitter:description" content="把 AI 编程助手放进你的工作区，数据与密钥留在本地。" />
+    <meta name="twitter:image" content="https://agent.yocim.top/assets/icon-256.png" />
     <link rel="icon" href="assets/icon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
     <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
     <link rel="stylesheet" href="assets/styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "YOCIM AGENT",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Windows, macOS, Linux",
+        "description": "本地优先的桌面 AI 编程助手：多模型接入、工具调用与审批、三栏工作区和内置编辑器。",
+        "url": "https://agent.yocim.top/",
+        "softwareVersion": "0.1.6",
+        "license": "https://github.com/YOCIM888/YOCIM-AGENT/blob/main/LICENSE",
+        "author": { "@type": "Organization", "name": "YOCIM" },
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      }
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#main">跳到正文</a>
@@ -30,15 +56,17 @@
         <a class="brand" href="/">
           <img class="brand-mark" src="assets/icon-256.png" alt="YOCIM AGENT" width="28" height="28" />
           <span class="brand-name">YOCIM <strong>AGENT</strong></span>
-          <span class="badge">预览版</span>
         </a>
         <nav class="nav" aria-label="主导航">
           <a href="#features">功能</a>
+          <a href="#compare">对比</a>
           <a href="#download">下载</a>
-          <a href="#notes">说明</a>
+          <a href="changelog.html">更新日志</a>
+          <a href="faq.html">常见问题</a>
           <a class="nav-ext" href="https://github.com/YOCIM888/YOCIM-AGENT" target="_blank" rel="noopener"
             >GitHub ↗</a
           >
+          <a class="nav-lang" href="/en/" lang="en" hreflang="en">EN</a>
         </nav>
       </div>
     </header>
@@ -47,7 +75,7 @@
       <section class="hero">
         <div class="wrap hero-inner">
           <div class="hero-copy">
-            <p class="eyebrow">预览版 · 本地优先 · 桌面端</p>
+            <p class="eyebrow">本地优先 · 桌面端</p>
             <h1>把 AI 编程助手<br />放进你的工作区</h1>
             <p class="lead">
               选择本地项目，和模型对话，让它在你的审批下读取、修改文件并执行受控命令。会话、设置与密钥都留在本地。
@@ -115,7 +143,65 @@
         </div>
       </section>
 
-      <section id="features" class="section">
+      <section id="compare" class="section">
+        <div class="wrap">
+          <h2>Why YOCIM vs Cursor / Cline</h2>
+          <p class="section-sub">三种不同的使用方式：独立桌面工作区、深度集成的编辑器、可扩展的编码代理。</p>
+          <div class="compare-scroll">
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th scope="col">对比维度</th>
+                  <th scope="col" class="highlight">YOCIM AGENT</th>
+                  <th scope="col">Cursor</th>
+                  <th scope="col">Cline</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">产品形态</th>
+                  <td class="highlight">独立桌面应用，项目 / 会话 / 工具在同一窗口</td>
+                  <td>基于编辑器的 AI 开发环境，含云端 Agent 与 CLI</td>
+                  <td>IDE 扩展、CLI、桌面应用与 SDK 多种形态</td>
+                </tr>
+                <tr>
+                  <th scope="row">模型选择</th>
+                  <td class="highlight">自带 15+ 提供商，可接入本地 Ollama 与自定义端点</td>
+                  <td>可用多家前沿模型与自研模型，也可 BYOK</td>
+                  <td>支持 Anthropic / OpenAI / Gemini / OpenRouter / Ollama 等</td>
+                </tr>
+                <tr>
+                  <th scope="row">数据与密钥</th>
+                  <td class="highlight">会话与设置存本地 SQLite；API Key 经系统安全存储加密</td>
+                  <td>账号与云端能力是产品的一部分，具体数据流向见其隐私说明</td>
+                  <td>开源代理，密钥与配置由用户管理，可走本地模型</td>
+                </tr>
+                <tr>
+                  <th scope="row">审批与控制</th>
+                  <td class="highlight">手动 / 自动 / 开放三档；路径守卫与危险命令拦截始终生效</td>
+                  <td>编辑器内提供不同自主程度的 Agent 流程</td>
+                  <td>文件编辑与命令可逐项审批，也可自动批准</td>
+                </tr>
+                <tr>
+                  <th scope="row">工作区内置能力</th>
+                  <td class="highlight">编辑器、搜索替换、Git 提交图、终端、浏览器、调试、WSL / SSH</td>
+                  <td>以编辑器生态为中心，依赖扩展与集成</td>
+                  <td>以代理工具链为中心，支持 MCP 与插件扩展</td>
+                </tr>
+                <tr>
+                  <th scope="row">许可证</th>
+                  <td class="highlight">Apache-2.0，源码可审计</td>
+                  <td>专有软件，按订阅 / 套餐提供</td>
+                  <td>Apache-2.0（部分组件另行授权）</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="compare-note">信息按各项目公开资料整理，功能与条款可能随版本变化；请以双方官方文档为准。</p>
+        </div>
+      </section>
+
+      <section id="features" class="section alt">
         <div class="wrap">
           <h2>核心功能</h2>
           <p class="section-sub">不替代你的编辑器，而是把你和模型、工具、项目放在同一个窗口里。</p>
@@ -164,7 +250,7 @@
         </div>
       </section>
 
-      <section id="download" class="section alt">
+      <section id="download" class="section">
         <div class="wrap">
           <h2>下载</h2>
           <p class="section-sub">Windows、macOS 与 Linux 安装包均已发布，均为未签名构建。</p>
@@ -192,9 +278,7 @@
               >
               <p class="download-meta">
                 <span data-size>约 123 MB</span> ·
-                <a href="https://github.com/YOCIM888/YOCIM-AGENT/releases" target="_blank" rel="noopener"
-                  >所有版本与更新日志 ↗</a
-                >
+                <a href="changelog.html">更新日志 ↗</a>
               </p>
             </div>
             <div class="download-card quiet">
@@ -239,10 +323,63 @@
               </div>
             </div>
           </div>
+
+          <div class="pm-grid">
+            <article class="pm-card">
+              <h3>winget</h3>
+              <p>Windows 包管理器。清单已随仓库提供，社区源收录前可用本地清单安装。</p>
+              <div class="pm-command">winget install --manifest .\YOCIM.YOCIMAGENT.yaml</div>
+              <div class="pm-actions">
+                <a class="btn ghost small" href="install.html#winget">安装说明</a>
+                <button
+                  class="btn ghost small copy-btn"
+                  type="button"
+                  data-copy="winget install --manifest .\YOCIM.YOCIMAGENT.yaml"
+                >
+                  复制命令
+                </button>
+              </div>
+              <p class="pm-status">需先启用本地清单：winget settings --enable LocalManifestFiles</p>
+            </article>
+            <article class="pm-card">
+              <h3>Homebrew Cask</h3>
+              <p>macOS 命令行安装。Cask 文件已提供，官方 tap 收录前可本地安装。</p>
+              <div class="pm-command">brew install --cask ./yocim-agent.rb</div>
+              <div class="pm-actions">
+                <a class="btn ghost small" href="install.html#homebrew">安装说明</a>
+                <button
+                  class="btn ghost small copy-btn"
+                  type="button"
+                  data-copy="brew install --cask ./yocim-agent.rb"
+                >
+                  复制命令
+                </button>
+              </div>
+              <p class="pm-status">同时提供 arm64 与 x64 的 dmg 校验值。</p>
+            </article>
+            <article class="pm-card">
+              <h3>Scoop</h3>
+              <p>Windows 用户级安装。仓库内清单可直接通过 URL 安装，无需额外 bucket。</p>
+              <div class="pm-command">
+                scoop install https://raw.githubusercontent.com/YOCIM888/YOCIM-AGENT/main/packaging/scoop/yocim-agent.json
+              </div>
+              <div class="pm-actions">
+                <a class="btn ghost small" href="install.html#scoop">安装说明</a>
+                <button
+                  class="btn ghost small copy-btn"
+                  type="button"
+                  data-copy="scoop install https://raw.githubusercontent.com/YOCIM888/YOCIM-AGENT/main/packaging/scoop/yocim-agent.json"
+                >
+                  复制命令
+                </button>
+              </div>
+              <p class="pm-status">安装后自动创建开始菜单快捷方式。</p>
+            </article>
+          </div>
         </div>
       </section>
 
-      <section id="notes" class="section">
+      <section id="notes" class="section alt">
         <div class="wrap">
           <h2>安装说明</h2>
           <div class="notes">
@@ -256,7 +393,7 @@
             </div>
             <div class="note">
               <h3>首次使用</h3>
-              <p>打开设置添加一个模型提供商并填入 API Key，选择项目目录后即可新建会话开始对话。</p>
+              <p>打开设置添加一个模型提供商并填入 API Key，选择项目目录后即可新建会话开始对话。详见 <a href="faq.html">常见问题</a>。</p>
             </div>
           </div>
         </div>
@@ -265,11 +402,13 @@
 
     <footer class="site-footer">
       <div class="wrap footer-inner">
-        <p>© 2026 YOCIM · YOCIM AGENT</p>
+        <p>© 2026 YOCIM · YOCIM AGENT · <a href="privacy.html">隐私政策</a></p>
         <nav aria-label="页脚导航">
-          <a href="https://github.com/YOCIM888/YOCIM-AGENT" target="_blank" rel="noopener">源码仓库</a>
-          <a href="https://github.com/YOCIM888/YOCIM-AGENT/releases" target="_blank" rel="noopener">版本发布</a>
-          <a href="https://github.com/YOCIM888/YOCIM-AGENT/issues" target="_blank" rel="noopener">问题反馈</a>
+          <a href="install.html">安装方式</a>
+          <a href="changelog.html">更新日志</a>
+          <a href="faq.html">常见问题</a>
+          <a href="https://github.com/YOCIM888/YOCIM-AGENT/issues" target="_blank" rel="noopener">GitHub Issues</a>
+          <a href="mailto:yocim666@outlook.com">yocim666@outlook.com</a>
         </nav>
       </div>
     </footer>

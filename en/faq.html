@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FAQ — YOCIM AGENT</title>
+    <meta
+      name="description"
+      content="YOCIM AGENT FAQ: SmartScreen warnings, API key security, offline use, the relationship with Cursor, data location, and updates."
+    />
+    <link rel="canonical" href="https://agent.yocim.top/en/faq.html" />
+    <link rel="alternate" hreflang="zh-CN" href="https://agent.yocim.top/faq.html" />
+    <link rel="alternate" hreflang="en" href="https://agent.yocim.top/en/faq.html" />
+    <link rel="alternate" hreflang="x-default" href="https://agent.yocim.top/faq.html" />
+    <meta property="og:site_name" content="YOCIM AGENT" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="FAQ — YOCIM AGENT" />
+    <meta property="og:url" content="https://agent.yocim.top/en/faq.html" />
+    <meta property="og:description" content="SmartScreen, API key safety, offline use, and how YOCIM differs from Cursor." />
+    <meta property="og:image" content="https://agent.yocim.top/assets/icon-256.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="../assets/icon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+    <link rel="stylesheet" href="../assets/styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "name": "YOCIM AGENT FAQ",
+        "url": "https://agent.yocim.top/en/faq.html",
+        "dateModified": "2026-11-18",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Windows SmartScreen says Unknown publisher. Is it safe?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The installers are not code-signed yet, so SmartScreen shows Unknown publisher. Download only from this site or the project GitHub Releases, verify the file name and SHA-256, then choose More info → Run anyway. macOS builds are not notarized; right-click the app and choose Open on first launch."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where do my API keys go?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "API keys are encrypted with Electron safeStorage and stored locally. The UI only reads whether a key is configured. Requests go only to the model service or endpoint you configure; YOCIM does not operate a proxy and never collects your keys."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use it offline?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The app and local data work offline. With a local model such as Ollama, conversations can be fully offline. Cloud models, web search, and update checks need a network connection. Installation and updates require downloading from GitHub Releases."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is YOCIM AGENT related to Cursor?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "They are unrelated products. YOCIM AGENT is an independent open-source desktop app, not a Cursor fork or extension, and does not depend on Cursor proprietary services. You can use both; sessions and settings are not shared."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where is my data, and how do I delete it?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Projects, sessions, messages, settings, and audit logs live in the Electron userData directory, typically %APPDATA%\\YOCIM AGENT on Windows. Change it in Settings → Storage and restart. Delete the whole directory to remove local data; uninstalling does not delete it automatically."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I update or uninstall?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The app checks for new versions on startup. You can also download the latest installer from the changelog or GitHub Releases and install over the old version; sessions, settings, and API keys are preserved. On Windows use Settings → Apps; on macOS move the app to Trash; Scoop users can run scoop update yocim-agent."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="/en/">
+          <img class="brand-mark" src="../assets/icon-256.png" alt="YOCIM AGENT" width="28" height="28" />
+          <span class="brand-name">YOCIM <strong>AGENT</strong></span>
+        </a>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="/en/#features">Features</a>
+          <a href="/en/#download">Download</a>
+          <a href="changelog.html">Changelog</a>
+          <a href="faq.html">FAQ</a>
+          <a class="nav-ext" href="https://github.com/YOCIM888/YOCIM-AGENT" target="_blank" rel="noopener"
+            >GitHub ↗</a
+          >
+          <a class="nav-lang" href="/faq.html" lang="zh-CN" hreflang="zh-CN">中文</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="page-head">
+        <div class="wrap">
+          <h1>Frequently asked questions</h1>
+          <p>Common questions about install warnings, key security, offline use, and product positioning. Still stuck? Use the email or GitHub Issues link in the footer.</p>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary>Windows SmartScreen says "Unknown publisher". Is it safe?</summary>
+            <div class="faq-body">
+              <p>
+                The installers are not code-signed yet, so SmartScreen shows "Unknown publisher". Download only from this site or
+                <a href="https://github.com/YOCIM888/YOCIM-AGENT/releases/latest" target="_blank" rel="noopener"
+                  >GitHub Releases ↗</a
+                >, verify the file name and SHA-256, then choose More info → Run anyway. macOS builds are not notarized; right-click the app and choose Open on first launch.
+              </p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Where do my API keys go?</summary>
+            <div class="faq-body">
+              <p>
+                API keys are encrypted with Electron <code>safeStorage</code> and stored locally. The UI only reads whether a key is
+                configured. Requests go only to the model service or endpoint you configure; YOCIM does not operate a proxy. See the
+                <a href="privacy.html">Privacy Policy</a>.
+              </p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Can I use it offline?</summary>
+            <div class="faq-body">
+              <p>
+                The app and local data work offline. With a local model such as Ollama, conversations can be fully offline. Cloud
+                models, web search, and update checks need a network connection. Installation and updates require downloading from GitHub Releases.
+              </p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>How is YOCIM AGENT related to Cursor?</summary>
+            <div class="faq-body">
+              <p>
+                They are unrelated products. YOCIM AGENT is an independent open-source desktop app, not a Cursor fork or extension,
+                and does not depend on Cursor proprietary services. You can use both; sessions and settings are not shared. See the
+                <a href="/en/#compare">comparison</a>.
+              </p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Where is my data, and how do I delete it?</summary>
+            <div class="faq-body">
+              <p>
+                Projects, sessions, messages, settings, and audit logs live in the Electron <code>userData</code> directory, typically
+                <code>%APPDATA%\YOCIM AGENT</code> on Windows. Change it in Settings → Storage and restart. Delete the whole directory to remove local data; uninstalling does not delete it automatically.
+              </p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>How do I update or uninstall?</summary>
+            <div class="faq-body">
+              <p>
+                The app checks for new versions on startup. You can also download the latest installer from the
+                <a href="changelog.html">changelog</a> or GitHub Releases and install over the old version; sessions, settings, and
+                API keys are preserved. On Windows use Settings → Apps, on macOS move the app to Trash, and Scoop users can run
+                <code>scoop update yocim-agent</code>.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <p>© 2026 YOCIM · YOCIM AGENT · <a href="privacy.html">Privacy Policy</a></p>
+        <nav aria-label="Footer navigation">
+          <a href="install.html">Install</a>
+          <a href="changelog.html">Changelog</a>
+          <a href="faq.html">FAQ</a>
+          <a href="https://github.com/YOCIM888/YOCIM-AGENT/issues" target="_blank" rel="noopener">GitHub Issues</a>
+          <a href="mailto:yocim666@outlook.com">yocim666@outlook.com</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="../assets/main.js" defer></script>
+  </body>
+</html>

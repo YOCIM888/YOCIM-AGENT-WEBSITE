@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy Policy — YOCIM AGENT</title>
+    <meta
+      name="description"
+      content="YOCIM AGENT privacy policy: what is stored locally, when data leaves your device, and how the website caches release information."
+    />
+    <link rel="canonical" href="https://agent.yocim.top/en/privacy.html" />
+    <link rel="alternate" hreflang="zh-CN" href="https://agent.yocim.top/privacy.html" />
+    <link rel="alternate" hreflang="en" href="https://agent.yocim.top/en/privacy.html" />
+    <link rel="alternate" hreflang="x-default" href="https://agent.yocim.top/privacy.html" />
+    <meta property="og:site_name" content="YOCIM AGENT" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Privacy Policy — YOCIM AGENT" />
+    <meta property="og:url" content="https://agent.yocim.top/en/privacy.html" />
+    <meta property="og:description" content="Local storage, network requests, and website caching explained." />
+    <meta property="og:image" content="https://agent.yocim.top/assets/icon-256.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="../assets/icon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+    <link rel="stylesheet" href="../assets/styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Privacy Policy — YOCIM AGENT",
+        "url": "https://agent.yocim.top/en/privacy.html",
+        "description": "How YOCIM AGENT stores data locally and when it connects to the network.",
+        "dateModified": "2026-11-18",
+        "publisher": { "@type": "Organization", "name": "YOCIM" }
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="/en/">
+          <img class="brand-mark" src="../assets/icon-256.png" alt="YOCIM AGENT" width="28" height="28" />
+          <span class="brand-name">YOCIM <strong>AGENT</strong></span>
+        </a>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="/en/#features">Features</a>
+          <a href="/en/#download">Download</a>
+          <a href="changelog.html">Changelog</a>
+          <a href="faq.html">FAQ</a>
+          <a class="nav-ext" href="https://github.com/YOCIM888/YOCIM-AGENT" target="_blank" rel="noopener"
+            >GitHub ↗</a
+          >
+          <a class="nav-lang" href="/privacy.html" lang="zh-CN" hreflang="zh-CN">中文</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="page-head">
+        <div class="wrap">
+          <h1>Privacy Policy</h1>
+          <p>Last updated: November 18, 2026. YOCIM AGENT is a local-first desktop app. This policy explains where data lives and when the app connects to the network.</p>
+        </div>
+      </div>
+
+      <div class="wrap prose">
+        <section>
+          <h2>1. Data stored locally</h2>
+          <p>
+            Projects, sessions, messages, tool calls, settings, audit logs, and token usage are stored in your data
+            directory (Electron <code>userData</code>; on Windows typically <code>%APPDATA%\YOCIM AGENT</code>). You can change this directory in Settings → Storage; the change takes effect after a restart.
+          </p>
+          <p>
+            Each provider's API key is encrypted with Electron <code>safeStorage</code> before being written to local
+            settings. The interface only reads whether a key is configured — it never returns the key to the renderer or to this website.
+          </p>
+        </section>
+
+        <section>
+          <h2>2. What leaves your device</h2>
+          <ul>
+            <li>Your configured model provider: conversation content, tool context, and attachments go to the provider you choose (for example DeepSeek, OpenAI, Ollama, or a custom endpoint).</li>
+            <li>Web search: search terms go to Tavily only if you configure and enable a Tavily key.</li>
+            <li>Update check: the app queries GitHub Releases for the latest version after startup. Ignored versions are stored locally.</li>
+            <li>Image generation and remote workspaces are opt-in; destinations are determined by the endpoints you configure.</li>
+          </ul>
+          <p>The app has no ads, third-party analytics, or telemetry, and does not upload local conversations to a YOCIM-operated server.</p>
+        </section>
+
+        <section>
+          <h2>3. Website and download page</h2>
+          <p>
+            This website is static and does not set advertising or analytics cookies. The download page requests the
+            latest release from the GitHub API and caches it in <code>localStorage</code> for about six hours to speed up
+            repeat visits and reduce rate-limit errors. Clearing site data in your browser removes that cache.
+          </p>
+          <p>External links to GitHub, Cursor, Cline, and others are governed by their own privacy terms.</p>
+        </section>
+
+        <section>
+          <h2>4. Browser tools and cleanup</h2>
+          <p>
+            AI browser tools use dedicated <code>yocim-browser-*</code> storage partitions. Settings → Browser → Clear browser data only removes those partitions; your default browser profile is never touched.
+          </p>
+        </section>
+
+        <section>
+          <h2>5. Your control and contact</h2>
+          <p>
+            You can remove all local data by deleting the data directory. Uninstalling the app does not delete it
+            automatically. For privacy questions or removal requests, email
+            <a href="mailto:yocim666@outlook.com">yocim666@outlook.com</a> or open a
+            <a href="https://github.com/YOCIM888/YOCIM-AGENT/issues" target="_blank" rel="noopener">GitHub Issue</a>.
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <p>© 2026 YOCIM · YOCIM AGENT · <a href="privacy.html">Privacy Policy</a></p>
+        <nav aria-label="Footer navigation">
+          <a href="install.html">Install</a>
+          <a href="changelog.html">Changelog</a>
+          <a href="faq.html">FAQ</a>
+          <a href="https://github.com/YOCIM888/YOCIM-AGENT/issues" target="_blank" rel="noopener">GitHub Issues</a>
+          <a href="mailto:yocim666@outlook.com">yocim666@outlook.com</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="../assets/main.js" defer></script>
+  </body>
+</html>

@@ -81,3 +81,32 @@
       /* 网络或限流失败时保留兜底链接 */
     });
 })();
+
+// 安装命令复制按钮；剪切板不可用时回退到 textarea + execCommand。
+(() => {
+  document.querySelectorAll('[data-copy]').forEach((button) => {
+    const original = button.textContent;
+    button.addEventListener('click', async () => {
+      const text = button.getAttribute('data-copy') || '';
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch {
+        const area = document.createElement('textarea');
+        area.value = text;
+        area.setAttribute('readonly', '');
+        area.style.position = 'fixed';
+        area.style.opacity = '0';
+        document.body.appendChild(area);
+        area.select();
+        document.execCommand('copy');
+        area.remove();
+      }
+      button.textContent = button.getAttribute('data-copied-label') || '已复制';
+      button.dataset.copied = 'true';
+      window.setTimeout(() => {
+        button.textContent = original;
+        delete button.dataset.copied;
+      }, 1600);
+    });
+  });
+})();

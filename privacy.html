@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>隐私政策 — YOCIM AGENT</title>
+    <meta
+      name="description"
+      content="YOCIM AGENT 的隐私政策：数据如何保存在本地、哪些请求会离开设备、官网缓存与第三方链接说明。"
+    />
+    <link rel="canonical" href="https://agent.yocim.top/privacy.html" />
+    <link rel="alternate" hreflang="zh-CN" href="https://agent.yocim.top/privacy.html" />
+    <link rel="alternate" hreflang="en" href="https://agent.yocim.top/en/privacy.html" />
+    <link rel="alternate" hreflang="x-default" href="https://agent.yocim.top/privacy.html" />
+    <meta property="og:site_name" content="YOCIM AGENT" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="隐私政策 — YOCIM AGENT" />
+    <meta property="og:url" content="https://agent.yocim.top/privacy.html" />
+    <meta property="og:description" content="了解 YOCIM AGENT 的本地数据存储、网络请求与官网缓存策略。" />
+    <meta property="og:image" content="https://agent.yocim.top/assets/icon-256.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="assets/icon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "隐私政策 — YOCIM AGENT",
+        "url": "https://agent.yocim.top/privacy.html",
+        "description": "YOCIM AGENT 的本地数据存储、网络请求与官网缓存说明。",
+        "dateModified": "2026-11-18",
+        "publisher": { "@type": "Organization", "name": "YOCIM" }
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到正文</a>
+
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="/">
+          <img class="brand-mark" src="assets/icon-256.png" alt="YOCIM AGENT" width="28" height="28" />
+          <span class="brand-name">YOCIM <strong>AGENT</strong></span>
+        </a>
+        <nav class="nav" aria-label="主导航">
+          <a href="/#features">功能</a>
+          <a href="/#download">下载</a>
+          <a href="changelog.html">更新日志</a>
+          <a href="faq.html">常见问题</a>
+          <a class="nav-ext" href="https://github.com/YOCIM888/YOCIM-AGENT" target="_blank" rel="noopener"
+            >GitHub ↗</a
+          >
+          <a class="nav-lang" href="/en/privacy.html" lang="en" hreflang="en">EN</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="page-head">
+        <div class="wrap">
+          <h1>隐私政策</h1>
+          <p>最后更新：2026 年 11 月 18 日。YOCIM AGENT 是本地优先的桌面应用，本政策说明数据保存在哪里，以及什么时候会联网。</p>
+        </div>
+      </div>
+
+      <div class="wrap prose">
+        <section>
+          <h2>1. 本地存储的数据</h2>
+          <p>
+            项目、会话、消息、工具调用记录、设置、审计日志和 token 用量保存在你本机的数据目录（Electron
+            <code>userData</code>，Windows 通常为 <code>%APPDATA%\YOCIM AGENT</code>）。你可以在「设置 → 存储」更换该目录，改动在重启后生效。
+          </p>
+          <p>
+            每个模型提供商的 API Key 经 Electron <code>safeStorage</code> 加密后写入本地设置，界面只读取「是否已配置」，不会把密钥回传给渲染进程或官网。
+          </p>
+        </section>
+
+        <section>
+          <h2>2. 会离开设备的内容</h2>
+          <ul>
+            <li>你配置的模型服务：对话内容、工具调用上下文与附件会发送到你选择的提供商（例如 DeepSeek、OpenAI、Ollama 或自定义端点）。</li>
+            <li>联网搜索：只有当你配置并启用 Tavily Key 时，搜索词才会发送给 Tavily。</li>
+            <li>版本更新检查：启动后向 GitHub Releases 查询最新版本号；忽略的版本号只保存在本机浏览器/应用存储中。</li>
+            <li>生图、远程工作区等功能由你在设置中显式启用，请求目标由你配置的端点决定。</li>
+          </ul>
+          <p>应用不内置广告、第三方统计或遥测服务，也不会把本地会话内容上传到 YOCIM 运营的服务器。</p>
+        </section>
+
+        <section>
+          <h2>3. 官网与下载页</h2>
+          <p>
+            官网是静态页面，不设置广告或分析 Cookie。下载页会在浏览器中请求 GitHub API 获取最新 Release 信息，并在
+            <code>localStorage</code> 中缓存约 6 小时，以加快后续访问并降低被限流的概率。你可以随时清除浏览器站点数据来删除该缓存。
+          </p>
+          <p>官网中的 GitHub、Cursor、Cline 等外链由各自运营方管理，请查阅其隐私条款。</p>
+        </section>
+
+        <section>
+          <h2>4. 浏览器工具与数据清理</h2>
+          <p>
+            AI 浏览器工具使用独立的 <code>yocim-browser-*</code> 存储分区。「设置 → 浏览器 → 清除浏览器数据」只清理这些分区，不会触碰你的默认浏览器配置或日常 profile。
+          </p>
+        </section>
+
+        <section>
+          <h2>5. 你的控制与联系</h2>
+          <p>
+            你可以删除整个数据目录来清除所有本地数据；卸载应用不会自动删除该目录，请按需手动处理。对隐私政策有疑问或需要删除相关反馈，请发邮件至
+            <a href="mailto:yocim666@outlook.com">yocim666@outlook.com</a>，或在
+            <a href="https://github.com/YOCIM888/YOCIM-AGENT/issues" target="_blank" rel="noopener">GitHub Issues</a> 中提出。
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <p>© 2026 YOCIM · YOCIM AGENT · <a href="privacy.html">隐私政策</a></p>
+        <nav aria-label="页脚导航">
+          <a href="install.html">安装方式</a>
+          <a href="changelog.html">更新日志</a>
+          <a href="faq.html">常见问题</a>
+          <a href="https://github.com/YOCIM888/YOCIM-AGENT/issues" target="_blank" rel="noopener">GitHub Issues</a>
+          <a href="mailto:yocim666@outlook.com">yocim666@outlook.com</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="assets/main.js" defer></script>
+  </body>
+</html>

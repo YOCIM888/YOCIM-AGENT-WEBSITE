@@ -121,18 +121,6 @@ p {
   font-weight: 700;
 }
 
-.badge {
-  padding: 3px 8px;
-  border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
-  border-radius: 999px;
-  background: var(--accent-soft);
-  color: var(--accent);
-  font-size: 11px;
-  font-weight: 600;
-  line-height: 1.4;
-  letter-spacing: 0.02em;
-}
-
 .nav {
   display: flex;
   align-items: center;
@@ -153,6 +141,18 @@ p {
 }
 
 .nav-ext:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.nav-lang {
+  padding: 5px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text);
+}
+
+.nav-lang:hover {
   border-color: var(--accent);
   color: var(--accent);
 }
@@ -529,6 +529,271 @@ p {
   gap: 8px;
 }
 
+/* 对比表 */
+.compare-scroll {
+  margin-top: 32px;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+}
+
+.compare-table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.compare-table th,
+.compare-table td {
+  padding: 15px 18px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border);
+}
+
+.compare-table thead th {
+  background: var(--bg-soft);
+  font-size: 15px;
+}
+
+.compare-table thead th:first-child,
+.compare-table tbody th {
+  width: 22%;
+}
+
+.compare-table thead th.highlight {
+  color: var(--accent);
+}
+
+.compare-table tbody th {
+  font-weight: 600;
+}
+
+.compare-table td {
+  color: var(--text-muted);
+}
+
+.compare-table td.highlight {
+  color: var(--text);
+  background: color-mix(in srgb, var(--accent) 6%, transparent);
+}
+
+.compare-table tbody tr:last-child > * {
+  border-bottom: 0;
+}
+
+.compare-note {
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* 包管理器安装方式 */
+.pm-grid {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.pm-card {
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+}
+
+.pm-card h3 {
+  font-size: 16px;
+}
+
+.pm-card p {
+  margin-top: 8px;
+  font-size: 13.5px;
+  color: var(--text-muted);
+}
+
+.pm-command {
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 8px;
+  background: var(--bg-soft);
+  color: var(--text);
+  font: 13px/1.6 ui-monospace, SFMono-Regular, Consolas, monospace;
+  overflow-wrap: anywhere;
+}
+
+.pm-actions {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.btn.small {
+  height: 34px;
+  padding: 0 12px;
+  font-size: 13px;
+}
+
+.copy-btn[data-copied='true'] {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.pm-status {
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* 内页通用排版 */
+.page-head {
+  padding: 56px 0 28px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-soft);
+}
+
+.page-head h1 {
+  font-size: clamp(28px, 3.6vw, 38px);
+  letter-spacing: -0.02em;
+}
+
+.page-head p {
+  margin-top: 12px;
+  max-width: 48em;
+  color: var(--text-muted);
+}
+
+.prose {
+  max-width: 780px;
+}
+
+.prose section {
+  padding: 36px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.prose section:last-child {
+  border-bottom: 0;
+}
+
+.prose h2 {
+  font-size: 20px;
+}
+
+.prose h3 {
+  margin-top: 22px;
+  font-size: 16px;
+}
+
+.prose p,
+.prose li {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.prose ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.prose a {
+  color: var(--accent);
+}
+
+.prose a:hover {
+  text-decoration: underline;
+}
+
+/* FAQ */
+.faq-list {
+  margin-top: 32px;
+  display: grid;
+  gap: 12px;
+}
+
+.faq-item {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+}
+
+.faq-item summary {
+  padding: 16px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: '+';
+  float: right;
+  color: var(--accent);
+}
+
+.faq-item[open] summary::after {
+  content: '−';
+}
+
+.faq-body {
+  padding: 0 20px 18px;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* Changelog */
+.release-list {
+  margin-top: 32px;
+  display: grid;
+  gap: 16px;
+}
+
+.release {
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+}
+
+.release-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.release h2 {
+  font-size: 18px;
+}
+
+.release time {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.release-body {
+  margin-top: 10px;
+  color: var(--text-muted);
+  font-size: 14px;
+  white-space: pre-wrap;
+}
+
+.release a {
+  color: var(--accent);
+}
+
+.release a:hover {
+  text-decoration: underline;
+}
+
 /* 说明 */
 .notes {
   margin-top: 32px;
@@ -595,6 +860,10 @@ p {
   .notes {
     grid-template-columns: 1fr;
   }
+
+  .pm-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 640px) {
@@ -602,7 +871,7 @@ p {
     gap: 14px;
   }
 
-  .nav a:not(.nav-ext):not(:first-child) {
+  .nav a:not(.nav-ext):not(.nav-lang):not(:first-child) {
     display: none;
   }
 

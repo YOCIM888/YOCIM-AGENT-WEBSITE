@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Install — YOCIM AGENT</title>
+    <meta
+      name="description"
+      content="Install YOCIM AGENT with winget, Homebrew Cask, Scoop, or direct downloads, including commands, manifest URLs, and checksum notes."
+    />
+    <link rel="canonical" href="https://agent.yocim.top/en/install.html" />
+    <link rel="alternate" hreflang="zh-CN" href="https://agent.yocim.top/install.html" />
+    <link rel="alternate" hreflang="en" href="https://agent.yocim.top/en/install.html" />
+    <link rel="alternate" hreflang="x-default" href="https://agent.yocim.top/install.html" />
+    <meta property="og:site_name" content="YOCIM AGENT" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Install — YOCIM AGENT" />
+    <meta property="og:url" content="https://agent.yocim.top/en/install.html" />
+    <meta property="og:description" content="winget, Homebrew Cask, Scoop, and direct download commands." />
+    <meta property="og:image" content="https://agent.yocim.top/assets/icon-256.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="../assets/icon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+    <link rel="stylesheet" href="../assets/styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Install — YOCIM AGENT",
+        "url": "https://agent.yocim.top/en/install.html",
+        "description": "Installation instructions for winget, Homebrew Cask, Scoop, and direct downloads.",
+        "dateModified": "2026-11-18",
+        "publisher": { "@type": "Organization", "name": "YOCIM" }
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="/en/">
+          <img class="brand-mark" src="../assets/icon-256.png" alt="YOCIM AGENT" width="28" height="28" />
+          <span class="brand-name">YOCIM <strong>AGENT</strong></span>
+        </a>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="/en/#features">Features</a>
+          <a href="/en/#download">Download</a>
+          <a href="changelog.html">Changelog</a>
+          <a href="faq.html">FAQ</a>
+          <a class="nav-ext" href="https://github.com/YOCIM888/YOCIM-AGENT" target="_blank" rel="noopener"
+            >GitHub ↗</a
+          >
+          <a class="nav-lang" href="/install.html" lang="zh-CN" hreflang="zh-CN">中文</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="page-head">
+        <div class="wrap">
+          <h1>Install</h1>
+          <p>All methods use the same GitHub Release assets. Manifests ship with the repository; inclusion in third-party official sources still requires their review.</p>
+        </div>
+      </div>
+
+      <div class="wrap prose">
+        <section id="winget">
+          <h2>winget (Windows)</h2>
+          <p>The manifest currently installs from a local file. Make sure the App Installer from Microsoft Store is installed, then allow local manifests:</p>
+          <div class="pm-command">winget settings --enable LocalManifestFiles</div>
+          <div class="pm-actions">
+            <button class="btn ghost small copy-btn" type="button" data-copy="winget settings --enable LocalManifestFiles">
+              Copy command
+            </button>
+          </div>
+          <h3>Download the manifest and install</h3>
+          <div class="pm-command">
+            curl -L -o YOCIM.YOCIMAGENT.yaml https://raw.githubusercontent.com/YOCIM888/YOCIM-AGENT/main/packaging/winget/YOCIM.YOCIMAGENT.yaml
+          </div>
+          <div class="pm-command">winget install --manifest .\YOCIM.YOCIMAGENT.yaml</div>
+          <div class="pm-actions">
+            <button
+              class="btn ghost small copy-btn"
+              type="button"
+              data-copy="curl -L -o YOCIM.YOCIMAGENT.yaml https://raw.githubusercontent.com/YOCIM888/YOCIM-AGENT/main/packaging/winget/YOCIM.YOCIMAGENT.yaml"
+            >
+              Copy download
+            </button>
+            <button
+              class="btn ghost small copy-btn"
+              type="button"
+              data-copy="winget install --manifest .\YOCIM.YOCIMAGENT.yaml"
+            >
+              Copy install
+            </button>
+          </div>
+          <p>The manifest uses the NSIS silent switch <code>/S</code>. Once accepted into the winget community repository, run <code>winget install --id YOCIM.YOCIMAGENT -e</code>.</p>
+        </section>
+
+        <section id="homebrew">
+          <h2>Homebrew Cask (macOS)</h2>
+          <p>The cask includes both Apple Silicon and Intel dmg URLs with SHA-256 checks. Install the local cask file for now:</p>
+          <div class="pm-command">
+            curl -L -o yocim-agent.rb https://raw.githubusercontent.com/YOCIM888/YOCIM-AGENT/main/packaging/homebrew/Casks/yocim-agent.rb
+          </div>
+          <div class="pm-command">brew install --cask ./yocim-agent.rb</div>
+          <div class="pm-actions">
+            <button
+              class="btn ghost small copy-btn"
+              type="button"
+              data-copy="curl -L -o yocim-agent.rb https://raw.githubusercontent.com/YOCIM888/YOCIM-AGENT/main/packaging/homebrew/Casks/yocim-agent.rb"
+            >
+              Copy download
+            </button>
+            <button class="btn ghost small copy-btn" type="button" data-copy="brew install --cask ./yocim-agent.rb">
+              Copy install
+            </button>
+          </div>
+          <p>Builds are not notarized, so macOS may block the first launch: right-click the app and choose Open, or allow it in System Settings. After an official tap accepts the cask, use <code>brew install --cask yocim-agent</code>.</p>
+        </section>
+
+        <section id="scoop">
+          <h2>Scoop (Windows)</h2>
+          <p>Scoop can install a manifest directly from a public URL — no extra bucket required:</p>
+          <div class="pm-command">
+            scoop install https://raw.githubusercontent.com/YOCIM888/YOCIM-AGENT/main/packaging/scoop/yocim-agent.json
+          </div>
+          <div class="pm-actions">
+            <button
+              class="btn ghost small copy-btn"
+              type="button"
+              data-copy="scoop install https://raw.githubusercontent.com/YOCIM888/YOCIM-AGENT/main/packaging/scoop/yocim-agent.json"
+            >
+              Copy command
+            </button>
+          </div>
+          <p>Update later with <code>scoop update yocim-agent</code>. The manifest extracts the NSIS installer with 7-Zip to avoid writing outside the Scoop directory.</p>
+        </section>
+
+        <section>
+          <h2>Direct download</h2>
+          <p>
+            If you prefer not to use a package manager, get the Windows installer, macOS dmg, and Linux AppImage from the
+            <a href="changelog.html">changelog</a> or the
+            <a href="https://github.com/YOCIM888/YOCIM-AGENT/releases/latest" target="_blank" rel="noopener"
+              >latest release ↗</a
+            >. Release assets include SHA-256 digests for verification.
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <p>© 2026 YOCIM · YOCIM AGENT · <a href="privacy.html">Privacy Policy</a></p>
+        <nav aria-label="Footer navigation">
+          <a href="install.html">Install</a>
+          <a href="changelog.html">Changelog</a>
+          <a href="faq.html">FAQ</a>
+          <a href="https://github.com/YOCIM888/YOCIM-AGENT/issues" target="_blank" rel="noopener">GitHub Issues</a>
+          <a href="mailto:yocim666@outlook.com">yocim666@outlook.com</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="../assets/main.js" defer></script>
+  </body>
+</html>
